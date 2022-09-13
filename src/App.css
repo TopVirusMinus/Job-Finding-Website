@@ -1,0 +1,18 @@
+.Temporary {
+  background-color: rgb(89, 178, 150);
+}
+
+.Fulltime {
+  background-color: rgb(7, 75, 201);
+}
+.Internship {
+  background-color: rgb(193, 81, 67);
+}
+
+.Parttime {
+  background-color: rgb(229, 201, 91);
+}
+
+.Freelance {
+  background-color: rgb(79, 197, 199);
+}

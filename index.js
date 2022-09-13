@@ -14,7 +14,7 @@ app.use(cors());
 
 app.get("/getJobs", (req, res) => {
   const url = `https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${process.env.ADZUNA_APP_ID}&app_key=${process.env.ADZUNA_APP_KEY}`;
-  console.log(url);
+  //console.log(url);
 
   const options = {
     method: "GET",

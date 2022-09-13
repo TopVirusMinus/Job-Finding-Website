@@ -1,24 +1,23 @@
+import JobCard from "../JobCard/JobCard";
 import CSS from "./JobResults.module.css";
-import { ImLocation } from "react-icons/im";
-import { AiOutlineClockCircle } from "react-icons/ai";
 import axios from "axios";
 
 const JobResults = () => {
-  const url = "http://localhost:8000/getJobs";
+  // const url = "http://localhost:8000/getJobs";
 
-  const options = {
-    method: "GET",
-    url,
-  };
+  // const options = {
+  //   method: "GET",
+  //   url,
+  // };
 
-  axios
-    .request(options)
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // axios
+  //   .request(options)
+  //   .then((res) => {
+  //     console.log(res.data);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 
   return (
     <>
@@ -134,29 +133,24 @@ const JobResults = () => {
           role="tabpanel"
           aria-labelledby="All-Jobs-Tab"
         >
-          <div className="row">
-            <div className="col">
-              <div className="companyInfo">
-                <img
-                  className={CSS.companyLogo}
-                  src="https://seeklogo.com/images/C/Coca-Cola-logo-108E6559A3-seeklogo.com.png"
-                  alt=""
-                />
-                <h5 className={CSS.jobTitle}>Project Manager</h5>
-                <span className={CSS.companyName}>Cocacola</span>
-                <span className={CSS.companySlogan}>Open Happiness</span>
-              </div>
-            </div>
-            <div className="col">
-              <ImLocation style={{ color: "gray" }} />
-              <span>Strosinbury</span>
-            </div>
-            <div className="col">
-              <AiOutlineClockCircle />
-              <span>8 Hours Ago</span>
-            </div>
-            <div className="col">4</div>
-          </div>
+          <JobCard
+            img="https://seeklogo.com/images/C/Coca-Cola-logo-108E6559A3-seeklogo.com.png"
+            jobTitle="Project Manager"
+            companyName="Cocacola"
+            companySlogan="Open Happiness"
+            location="Strosinbury"
+            time="8 Hours Ago"
+            jobType="Temporary"
+          />
+          <JobCard
+            img="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg"
+            jobTitle="Front End Developer"
+            companyName="IBM"
+            companySlogan="THINK"
+            location="Armonk"
+            time="1 Day Ago"
+            jobType="Internship"
+          />
         </div>
         <div
           className="tab-pane fade"
