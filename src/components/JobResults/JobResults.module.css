@@ -1,0 +1,27 @@
+.jobCount {
+  color: blue;
+}
+
+.sortFilter {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.companyName {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.companySlogan {
+  color: gray;
+  border-left: 1px solid gray;
+  margin-left: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.companyLogo {
+  width: 50%;
+  height: 50%;
+}

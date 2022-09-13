@@ -11,7 +11,7 @@ const Finder = () => {
           role="tablist"
         >
           <button
-            className="nav-link tabButton active"
+            className={`nav-link ${CSS.tabBtn} tabButton active`}
             id="nav-home-tab"
             data-bs-toggle="tab"
             data-bs-target="#nav-home"
@@ -43,10 +43,10 @@ const Finder = () => {
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <div className="row">
+          <div className={`row ${CSS.jobTabContainer}`}>
             <div className="row p-3 d-flex shadow-sm justify-content-around align-content-center">
               <div className="col-lg-3 border-end ">
-                <label for="jobInput" className="form-label">
+                <label htmlFor="jobInput" className="form-label">
                   Job
                 </label>
                 <input
@@ -58,7 +58,7 @@ const Finder = () => {
                 />
               </div>
               <div className="col-lg-3 mt-lg-0 mt-2 border-end">
-                <label for="locationInput" className="form-label">
+                <label htmlFor="locationInput" className="form-label">
                   Location
                 </label>
                 <input
@@ -70,7 +70,7 @@ const Finder = () => {
                 />
               </div>
               <div className="col-lg-3 mt-lg-0 mt-2">
-                <label for="selectCategory" className="form-label">
+                <label htmlFor="selectCategory" className="form-label">
                   Category
                 </label>
                 <select
@@ -78,7 +78,9 @@ const Finder = () => {
                   aria-label="Default select example"
                   id="selectCategory"
                 >
-                  <option selected>Select Industry</option>
+                  <option value="Select Industry" selected>
+                    Select Industry
+                  </option>
                   <option value="1">Artificial Intelligence</option>
                   <option value="2">Commerce</option>
                   <option value="3">Education</option>
