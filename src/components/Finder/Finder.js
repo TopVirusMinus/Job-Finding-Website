@@ -3,9 +3,13 @@ import { BsSearch } from "react-icons/bs";
 
 const Finder = () => {
   return (
-    <>
+    <div className="container">
       <nav>
-        <div className="nav nav-tabs" id="nav-tab" role="tablist">
+        <div
+          className="nav nav-tabs position-relative start"
+          id="nav-tab"
+          role="tablist"
+        >
           <button
             className="nav-link tabButton active"
             id="nav-home-tab"
@@ -39,37 +43,40 @@ const Finder = () => {
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <div className="findAJobContainer">
-            <div className="row p-3 d-flex shadow-sm align-content-center">
-              <div className="col-3 border-end justify-content-around">
-                <label for="exampleInputEmail1" className="form-label">
+          <div className="row">
+            <div className="row p-3 d-flex shadow-sm justify-content-around align-content-center">
+              <div className="col-lg-3 border-end ">
+                <label for="jobInput" className="form-label">
                   Job
                 </label>
                 <input
                   type="email"
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="jobInput"
                   aria-describedby="emailHelp"
                   placeholder="job title, Keywords"
                 />
               </div>
-              <div className="col-3 border-end justify-content-around">
-                <label for="exampleInputEmail1" className="form-label">
+              <div className="col-lg-3 mt-lg-0 mt-2 border-end">
+                <label for="locationInput" className="form-label">
                   Location
                 </label>
                 <input
                   type="email"
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="locationInput"
                   aria-describedby="emailHelp"
                   placeholder="City, province or region"
                 />
               </div>
-              <div className="col-3">
-                <p>Category</p>
+              <div className="col-lg-3 mt-lg-0 mt-2">
+                <label for="selectCategory" className="form-label">
+                  Category
+                </label>
                 <select
                   className="form-select"
                   aria-label="Default select example"
+                  id="selectCategory"
                 >
                   <option selected>Select Industry</option>
                   <option value="1">Artificial Intelligence</option>
@@ -77,10 +84,15 @@ const Finder = () => {
                   <option value="3">Education</option>
                 </select>
               </div>
-              <button type="button" className="col btn btn-dark">
-                <BsSearch />
-                <span className="ml-2">Search</span>
-              </button>
+              <div className="col">
+                <button
+                  type="button"
+                  className={`btn ${CSS.searchButton} col-12 h-100 btn-dark`}
+                >
+                  <BsSearch />
+                  <span className="ml-2">Search</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -91,7 +103,7 @@ const Finder = () => {
           aria-labelledby="nav-profile-tab"
         ></div>
       </div>
-    </>
+    </div>
   );
 };
 

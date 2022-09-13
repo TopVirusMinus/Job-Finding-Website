@@ -6,3 +6,11 @@
 .tabSection {
   border-right: 1px solid black;
 }
+.searchButton {
+  cursor: pointer;
+}
+@media only screen and (max-width: 992px) {
+  .searchButton {
+    margin-top: 1rem;
+  }
+}
