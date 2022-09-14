@@ -14,8 +14,6 @@ export const getJobs = createAsyncThunk(
 
     try {
       const response = await axios.request(options);
-      console.log(response.data);
-      console.log(jobSlice.actions);
       dispatch(increaseJobs(4));
       return response.data;
     } catch (error) {
@@ -42,7 +40,6 @@ const jobSlice = createSlice({
     [getJobs.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.isError = false;
-      console.log(action, "ACTION");
       state.jobs = action.payload;
     },
     [getJobs.rejected]: (state, action) => {

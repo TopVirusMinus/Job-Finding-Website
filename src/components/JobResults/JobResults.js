@@ -4,6 +4,8 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import moment from "moment";
 import { increaseJobs } from "../../store/jobSlice";
+import { setState } from "../../store/searchQuerySlice";
+import { useSelector } from "react-redux";
 
 const JobResults = ({
   isLoading,
@@ -12,24 +14,81 @@ const JobResults = ({
   numberOfJobsToShow,
   dispatch,
 }) => {
-  const jobComponents = jobs.slice(0, numberOfJobsToShow).map((j) => {
-    return (
-      <JobCard
-        key={j.id}
-        img={`https://picsum.photos/id/${j.id}/200/300`}
-        jobTitle={j.jobtitle}
-        companyName={j.companyName}
-        companySlogan="THINK"
-        location={j.location}
-        time={moment(j.createdAt).fromNow()}
-        jobType={
-          ["Temporary", "Fulltime", "Internship", "Parttime", "Freelance"][
-            Math.floor(Math.random() * 5)
-          ]
-        }
-      />
-    );
-  });
+  const searchQueryState = useSelector((state) => state.searchQuerySlice);
+
+  let jobComponents =
+    jobs && (searchQueryState.job || searchQueryState.location)
+      ? jobs
+          .filter((j) => {
+            if (!searchQueryState.job && !searchQueryState.location) {
+              return true;
+            }
+            if (searchQueryState.job && searchQueryState.location) {
+              return (
+                j.jobtitle
+                  .toLowerCase()
+                  .includes(searchQueryState.job.toLowerCase()) &&
+                j.location
+                  .toLowerCase()
+                  .includes(searchQueryState.location.toLowerCase())
+              );
+            } else if (searchQueryState.job.toLowerCase()) {
+              return j.jobtitle
+                .toLowerCase()
+                .includes(searchQueryState.job.toLowerCase());
+            } else if (searchQueryState.location.toLowerCase()) {
+              return j.location
+                .toLowerCase()
+                .includes(searchQueryState.location.toLowerCase());
+            }
+            return false;
+          })
+          .map((j) => {
+            console.log(j.jobtitle);
+
+            return (
+              <JobCard
+                key={j.id}
+                img={`https://picsum.photos/id/${j.id}/200/300`}
+                jobTitle={j.jobtitle}
+                companyName={j.companyName}
+                companySlogan="THINK"
+                location={j.location}
+                time={moment(j.createdAt).fromNow()}
+                jobType={
+                  [
+                    "Temporary",
+                    "Fulltime",
+                    "Internship",
+                    "Parttime",
+                    "Freelance",
+                  ][Math.floor(Math.random() * 5)]
+                }
+              />
+            );
+          })
+      : jobs.slice(0, numberOfJobsToShow).map((j) => {
+          return (
+            <JobCard
+              key={j.id}
+              img={`https://picsum.photos/id/${j.id}/200/300`}
+              jobTitle={j.jobtitle}
+              companyName={j.companyName}
+              companySlogan="THINK"
+              location={j.location}
+              time={moment(j.createdAt).fromNow()}
+              jobType={
+                [
+                  "Temporary",
+                  "Fulltime",
+                  "Internship",
+                  "Parttime",
+                  "Freelance",
+                ][Math.floor(Math.random() * 5)]
+              }
+            />
+          );
+        });
 
   return (
     <>
@@ -146,6 +205,11 @@ const JobResults = ({
           role="tabpanel"
           aria-labelledby="All-Jobs-Tab"
         >
+          {isError && (
+            <div class="alert alert-danger" role="alert">
+              An error has occurred while fetching jobs!
+            </div>
+          )}
           {isLoading ? (
             <Spinner
               animation="border"
@@ -175,7 +239,9 @@ const JobResults = ({
           aria-labelledby="Full-Time-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
-            {jobComponents.filter((j) => j.props.jobType === "Fulltime")}
+            {jobComponents.filter((j) => {
+              return j.props.jobType === "Fulltime";
+            })}
           </div>
 
           {jobComponents.length < jobs.length && (
@@ -238,6 +304,7 @@ const JobResults = ({
           aria-labelledby="Part-Time-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
+            {console.log(jobComponents)}
             {jobComponents.filter((j) => j.props.jobType === "Parttime")}
           </div>
 
