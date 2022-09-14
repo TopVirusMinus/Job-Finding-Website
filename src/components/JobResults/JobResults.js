@@ -175,10 +175,7 @@ const JobResults = ({
           aria-labelledby="Full-Time-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
-            {jobComponents.filter((j) => {
-              console.log(j);
-              return j.props.jobType === "Fulltime";
-            })}
+            {jobComponents.filter((j) => j.props.jobType === "Fulltime")}
           </div>
 
           {jobComponents.length < jobs.length && (
@@ -199,10 +196,7 @@ const JobResults = ({
           aria-labelledby="Temporary-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
-            {jobComponents.filter((j) => {
-              console.log(j);
-              return j.props.jobType === "Temporary";
-            })}
+            {jobComponents.filter((j) => j.props.jobType === "Temporary")}
           </div>
 
           {jobComponents.length < jobs.length && (
@@ -223,10 +217,7 @@ const JobResults = ({
           aria-labelledby="Internship-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
-            {jobComponents.filter((j) => {
-              console.log(j);
-              return j.props.jobType === "Internship";
-            })}
+            {jobComponents.filter((j) => j.props.jobType === "Internship")}
           </div>
 
           {jobComponents.length < jobs.length && (
@@ -247,10 +238,7 @@ const JobResults = ({
           aria-labelledby="Part-Time-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
-            {jobComponents.filter((j) => {
-              console.log(j);
-              return j.props.jobType === "Parttime";
-            })}
+            {jobComponents.filter((j) => j.props.jobType === "Parttime")}
           </div>
 
           {jobComponents.length < jobs.length && (
@@ -271,10 +259,7 @@ const JobResults = ({
           aria-labelledby="Freelance-Tab"
         >
           <div className={`${CSS.jobCards} container-fluid-lg`}>
-            {jobComponents.filter((j) => {
-              console.log(j);
-              return j.props.jobType === "Freelance";
-            })}
+            {jobComponents.filter((j) => j.props.jobType === "Freelance")}
           </div>
 
           {jobComponents.length < jobs.length && (
