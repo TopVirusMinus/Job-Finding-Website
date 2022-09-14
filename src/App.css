@@ -16,3 +16,10 @@
 .Freelance {
   background-color: rgb(79, 197, 199);
 }
+
+.Freelance,
+.Parttime,
+.Internship,
+.Fulltime,
+.Temporary {
+}

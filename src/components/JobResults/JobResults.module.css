@@ -8,3 +8,9 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+.jobCards {
+  height: 550px;
+  overflow: hidden;
+  overflow-y: auto;
+}

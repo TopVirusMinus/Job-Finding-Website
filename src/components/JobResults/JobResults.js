@@ -1,30 +1,35 @@
 import JobCard from "../JobCard/JobCard";
 import CSS from "./JobResults.module.css";
 import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
+import moment from "moment";
 
-const JobResults = () => {
-  // const url = "http://localhost:8000/getJobs";
-
-  // const options = {
-  //   method: "GET",
-  //   url,
-  // };
-
-  // axios
-  //   .request(options)
-  //   .then((res) => {
-  //     console.log(res.data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-
+const JobResults = ({ isLoading, jobs, isError }) => {
+  const jobComponents = jobs.map((j) => {
+    return (
+      <JobCard
+        key={j.id}
+        img={`https://picsum.photos/id/${j.id}/200/300`}
+        jobTitle={j.jobtitle}
+        companyName={j.companyName}
+        companySlogan="THINK"
+        location={j.location}
+        time={moment(j.createdAt).fromNow()}
+        jobType={
+          ["Temporary", "Fulltime", "Internship", "Parttime", "Freelance"][
+            Math.floor(Math.random() * 5)
+          ]
+        }
+      />
+    );
+  });
   return (
     <>
       <div className="row justify-content-between">
         <div className="col-6">
           <span>
-            We have <span className={CSS.jobCount}>315</span> jobs for you
+            We have <span className={CSS.jobCount}>{jobComponents.length}</span>{" "}
+            jobs for you
           </span>
         </div>
 
@@ -128,29 +133,20 @@ const JobResults = () => {
       </ul>
       <div className="tab-content" id="myTabContent">
         <div
-          className="tab-pane fade show active"
+          className={`${CSS.jobCards} tab-pane fade show active`}
           id="All-Jobs"
           role="tabpanel"
           aria-labelledby="All-Jobs-Tab"
         >
-          <JobCard
-            img="https://seeklogo.com/images/C/Coca-Cola-logo-108E6559A3-seeklogo.com.png"
-            jobTitle="Project Manager"
-            companyName="Cocacola"
-            companySlogan="Open Happiness"
-            location="Strosinbury"
-            time="8 Hours Ago"
-            jobType="Temporary"
-          />
-          <JobCard
-            img="https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg"
-            jobTitle="Front End Developer"
-            companyName="IBM"
-            companySlogan="THINK"
-            location="Armonk"
-            time="1 Day Ago"
-            jobType="Internship"
-          />
+          {isLoading ? (
+            <Spinner
+              animation="border"
+              className="mt-3 ms-3"
+              role="status"
+            ></Spinner>
+          ) : (
+            <div className={`container-fluid-lg`}>{jobComponents}</div>
+          )}
         </div>
         <div
           className="tab-pane fade"

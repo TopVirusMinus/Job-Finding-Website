@@ -14,30 +14,28 @@ function JobCard({
   img,
 }) {
   return (
-    <div
-      className={`${CSS.cardContainer} row p-2 pd-5 border-bottom border-end w-100`}
-    >
-      <div className="col-4 w-30 ">
+    <div className={`${CSS.cardContainer} row p-2 border-bottom border-end `}>
+      <img className={CSS.companyLogo} src={img} alt="" />
+      <div className="col-3 w-30 mb-3 ">
         <div className={CSS.companyInfo}>
-          <img className={CSS.companyLogo} src={img} alt="" />
           <div className={CSS.companyDetails}>
-            <h5 className={CSS.jobTitle}>{jobTitle}</h5>
+            <h6 className={CSS.jobTitle}>{jobTitle}</h6>
             <span className={CSS.companyName}>{companyName}</span>
             <span className={CSS.companySlogan}>{companySlogan}</span>
           </div>
         </div>
       </div>
-      <div className="col-2 d-flex align-items-center">
+      <div className="col-3 d-flex align-items-center">
         <ImLocation
           style={{
             color: "gray",
           }}
         />
-        <span>{location}</span>
+        <span className="ms-1">{location}</span>
       </div>
       <div className="col-2  d-flex align-items-center">
         <AiOutlineClockCircle />
-        <span>{time}</span>
+        <span className="ms-1">{time}</span>
       </div>
       <div className="col d-flex align-items-center justify-content-evenly">
         <div
