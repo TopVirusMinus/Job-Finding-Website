@@ -3,9 +3,16 @@ import CSS from "./JobResults.module.css";
 import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import moment from "moment";
+import { increaseJobs } from "../../store/jobSlice";
 
-const JobResults = ({ isLoading, jobs, isError }) => {
-  const jobComponents = jobs.map((j) => {
+const JobResults = ({
+  isLoading,
+  jobs,
+  isError,
+  numberOfJobsToShow,
+  dispatch,
+}) => {
+  const jobComponents = jobs.slice(0, numberOfJobsToShow).map((j) => {
     return (
       <JobCard
         key={j.id}
@@ -133,7 +140,7 @@ const JobResults = ({ isLoading, jobs, isError }) => {
       </ul>
       <div className="tab-content" id="myTabContent">
         <div
-          className={`${CSS.jobCards} tab-pane fade show active`}
+          className={`mb-3 tab-pane fade show active`}
           id="All-Jobs"
           role="tabpanel"
           aria-labelledby="All-Jobs-Tab"
@@ -145,7 +152,19 @@ const JobResults = ({ isLoading, jobs, isError }) => {
               role="status"
             ></Spinner>
           ) : (
-            <div className={`container-fluid-lg`}>{jobComponents}</div>
+            <div className={`${CSS.jobCards} container-fluid-lg`}>
+              {jobComponents}
+            </div>
+          )}
+          {jobComponents.length < 100 && (
+            <div className="row m-auto mt-3">
+              <button
+                onClick={() => dispatch(increaseJobs(12))}
+                className="btn btn-secondary m-auto w-75 btn-lg btn-block"
+              >
+                Load More Listings
+              </button>
+            </div>
           )}
         </div>
         <div

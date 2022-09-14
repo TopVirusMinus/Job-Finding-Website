@@ -22,6 +22,8 @@ const JobSearching = () => {
           isLoading={jobState.isLoading}
           isError={jobState.isError}
           jobs={jobState.jobs}
+          numberOfJobsToShow={jobState.showJobs}
+          dispatch={dispatch}
         />
       </div>
       <div className="col-4"></div>
