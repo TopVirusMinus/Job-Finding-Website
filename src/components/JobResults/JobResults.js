@@ -30,13 +30,14 @@ const JobResults = ({
       />
     );
   });
+
   return (
     <>
       <div className="row justify-content-between">
         <div className="col-6">
           <span>
-            We have <span className={CSS.jobCount}>{jobComponents.length}</span>{" "}
-            jobs for you
+            We have <span className={CSS.jobCount}>{jobs.length}</span> jobs for
+            you
           </span>
         </div>
 
@@ -156,7 +157,7 @@ const JobResults = ({
               {jobComponents}
             </div>
           )}
-          {jobComponents.length < 100 && (
+          {jobComponents.length < jobs.length && (
             <div className="row m-auto mt-3">
               <button
                 onClick={() => dispatch(increaseJobs(12))}
@@ -173,7 +174,23 @@ const JobResults = ({
           role="tabpanel"
           aria-labelledby="Full-Time-Tab"
         >
-          2
+          <div className={`${CSS.jobCards} container-fluid-lg`}>
+            {jobComponents.filter((j) => {
+              console.log(j);
+              return j.props.jobType === "Fulltime";
+            })}
+          </div>
+
+          {jobComponents.length < jobs.length && (
+            <div className="row m-auto mt-3">
+              <button
+                onClick={() => dispatch(increaseJobs(12))}
+                className="btn btn-secondary m-auto w-75 btn-lg btn-block"
+              >
+                Load More Listings
+              </button>
+            </div>
+          )}
         </div>
         <div
           className="tab-pane fade"
@@ -181,7 +198,23 @@ const JobResults = ({
           role="tabpanel"
           aria-labelledby="Temporary-Tab"
         >
-          3
+          <div className={`${CSS.jobCards} container-fluid-lg`}>
+            {jobComponents.filter((j) => {
+              console.log(j);
+              return j.props.jobType === "Temporary";
+            })}
+          </div>
+
+          {jobComponents.length < jobs.length && (
+            <div className="row m-auto mt-3">
+              <button
+                onClick={() => dispatch(increaseJobs(12))}
+                className="btn btn-secondary m-auto w-75 btn-lg btn-block"
+              >
+                Load More Listings
+              </button>
+            </div>
+          )}
         </div>
         <div
           className="tab-pane fade"
@@ -189,7 +222,23 @@ const JobResults = ({
           role="tabpanel"
           aria-labelledby="Internship-Tab"
         >
-          4
+          <div className={`${CSS.jobCards} container-fluid-lg`}>
+            {jobComponents.filter((j) => {
+              console.log(j);
+              return j.props.jobType === "Internship";
+            })}
+          </div>
+
+          {jobComponents.length < jobs.length && (
+            <div className="row m-auto mt-3">
+              <button
+                onClick={() => dispatch(increaseJobs(12))}
+                className="btn btn-secondary m-auto w-75 btn-lg btn-block"
+              >
+                Load More Listings
+              </button>
+            </div>
+          )}
         </div>
         <div
           className="tab-pane fade"
@@ -197,7 +246,23 @@ const JobResults = ({
           role="tabpanel"
           aria-labelledby="Part-Time-Tab"
         >
-          5
+          <div className={`${CSS.jobCards} container-fluid-lg`}>
+            {jobComponents.filter((j) => {
+              console.log(j);
+              return j.props.jobType === "Parttime";
+            })}
+          </div>
+
+          {jobComponents.length < jobs.length && (
+            <div className="row m-auto mt-3">
+              <button
+                onClick={() => dispatch(increaseJobs(12))}
+                className="btn btn-secondary m-auto w-75 btn-lg btn-block"
+              >
+                Load More Listings
+              </button>
+            </div>
+          )}
         </div>
         <div
           className="tab-pane fade"
@@ -205,7 +270,23 @@ const JobResults = ({
           role="tabpanel"
           aria-labelledby="Freelance-Tab"
         >
-          6
+          <div className={`${CSS.jobCards} container-fluid-lg`}>
+            {jobComponents.filter((j) => {
+              console.log(j);
+              return j.props.jobType === "Freelance";
+            })}
+          </div>
+
+          {jobComponents.length < jobs.length && (
+            <div className="row m-auto mt-3">
+              <button
+                onClick={() => dispatch(increaseJobs(12))}
+                className="btn btn-secondary m-auto w-75 btn-lg btn-block"
+              >
+                Load More Listings
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>
