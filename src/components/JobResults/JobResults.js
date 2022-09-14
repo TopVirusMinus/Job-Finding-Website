@@ -3,7 +3,7 @@ import CSS from "./JobResults.module.css";
 import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import moment from "moment";
-import { increaseJobs } from "../../store/jobSlice";
+import { increaseJobs, setCurrentJobs } from "../../store/jobSlice";
 import { setState } from "../../store/searchQuerySlice";
 import { useSelector } from "react-redux";
 
@@ -59,7 +59,7 @@ const JobResults = ({
           })
           .map((j) => {
             console.log(j.jobtitle);
-
+            //`https://picsum.photos/id/${j.id}/200/300`
             return (
               <JobCard
                 key={j.id}

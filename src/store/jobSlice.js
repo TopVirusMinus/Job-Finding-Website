@@ -24,13 +24,16 @@ export const getJobs = createAsyncThunk(
 
 const jobSlice = createSlice({
   name: "jobSlice",
-  initialState: { jobs: [], isLoading: true, isError: false, showJobs: 0 },
+  initialState: { jobs: [],currentJobs:[], isLoading: true, isError: false, showJobs: 0 },
   reducers: {
     increaseJobs: (state, action) => {
       if (state.showJobs + action.payload <= state.jobs.length) {
         state.showJobs += action.payload;
       }
     },
+    setCurrentJobs:(state, action) => {
+      state.currentJobs = action.payload;
+    }
   },
   extraReducers: {
     [getJobs.pending]: (state, action) => {
@@ -41,6 +44,7 @@ const jobSlice = createSlice({
       state.isLoading = false;
       state.isError = false;
       state.jobs = action.payload;
+      state.currentJobs = action.payload;
     },
     [getJobs.rejected]: (state, action) => {
       state.isLoading = false;
@@ -50,5 +54,5 @@ const jobSlice = createSlice({
   },
 });
 
-export const { increaseJobs } = jobSlice.actions;
+export const { increaseJobs, setCurrentJobs } = jobSlice.actions;
 export default jobSlice.reducer;
