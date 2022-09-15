@@ -6,7 +6,6 @@ import { getJobs } from "../../store/jobSlice";
 
 const JobSearching = () => {
   const dispatch = useDispatch();
-  const jobState = useSelector((state) => state.jobSlice);
 
   useEffect(
     (_) => {
@@ -18,13 +17,7 @@ const JobSearching = () => {
   return (
     <div className="row mt-5">
       <div className="col-8">
-        <JobResults
-          isLoading={jobState.isLoading}
-          isError={jobState.isError}
-          jobs={jobState.jobs}
-          numberOfJobsToShow={jobState.showJobs}
-          dispatch={dispatch}
-        />
+        <JobResults />
       </div>
       <div className="col-4"></div>
     </div>
