@@ -12,6 +12,7 @@ function JobCard({
   time,
   jobType,
   img,
+  slogan,
 }) {
   return (
     <div className={`${CSS.cardContainer} row p-2 border-bottom border-end `}>
@@ -21,7 +22,7 @@ function JobCard({
           <div className={CSS.companyDetails}>
             <h6 className={CSS.jobTitle}>{jobTitle}</h6>
             <span className={CSS.companyName}>{companyName}</span>
-            <span className={CSS.companySlogan}>{companySlogan}</span>
+            <span className={CSS.companySlogan}>{slogan}</span>
           </div>
         </div>
       </div>
