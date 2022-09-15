@@ -50,7 +50,6 @@ export const getJobs = createAsyncThunk(
         r.slogan = slogans[Math.floor(Math.random() * jobTypes.length)];
         return true;
       });
-      dispatch(increaseJobs(4));
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -62,17 +61,10 @@ const jobSlice = createSlice({
   name: "jobSlice",
   initialState: {
     jobs: [],
-    currentJobs: [],
     isLoading: true,
     isError: false,
-    showJobs: 0,
   },
   reducers: {
-    increaseJobs: (state, action) => {
-      if (state.showJobs + action.payload <= state.jobs.length) {
-        state.showJobs += action.payload;
-      }
-    },
     setCurrentJobs: (state, action) => {
       state.currentJobs = action.payload;
     },
@@ -95,6 +87,4 @@ const jobSlice = createSlice({
     },
   },
 });
-
-export const { increaseJobs, setCurrentJobs } = jobSlice.actions;
 export default jobSlice.reducer;
