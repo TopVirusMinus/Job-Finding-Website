@@ -1,13 +1,10 @@
+import { SearchButton } from "../SearchButton/SearchButton";
+import { InputComponent } from "../InputComponent/InputComponent";
+import { CategorySelect } from "../CategorySelect/CategorySelect";
 import React from "react";
 import CSS from "./SearchForm.module.css";
-import { BsSearch } from "react-icons/bs";
 
-export function SearchForm({
-  jobQuery,
-  locationQuery,
-  categoryQuery,
-  handleSearch,
-}) {
+export const SearchForm = ({ handleSearch, setJobQuery, setLocationQuery }) => {
   return (
     <>
       <div className="container">
@@ -18,7 +15,7 @@ export function SearchForm({
             role="tablist"
           >
             <button
-              className={`nav-link ${CSS.tabBtn} tabButton active`}
+              className={`nav-link ${CSS.tabBtn} tabButton active fw-bold`}
               id="nav-home-tab"
               data-bs-toggle="tab"
               data-bs-target="#nav-home"
@@ -30,7 +27,7 @@ export function SearchForm({
               Find A Job
             </button>
             <button
-              className="nav-link"
+              className="nav-link fw-bold"
               id="nav-profile-tab"
               data-bs-toggle="tab"
               data-bs-target="#nav-profile"
@@ -53,58 +50,28 @@ export function SearchForm({
             <div className={`row ${CSS.jobTabContainer}`}>
               <div className="row p-3 d-flex shadow-sm justify-content-around align-content-center">
                 <div className="col-lg-3 border-end ">
-                  <label htmlFor="jobInput" className="form-label">
-                    Job
-                  </label>
-                  <input
-                    ref={jobQuery}
-                    type="email"
-                    className="form-control"
-                    id="jobInput"
-                    aria-describedby="emailHelp"
-                    placeholder="job title, Keywords"
+                  <InputComponent
+                    label={"Job"}
+                    handleChange={setJobQuery}
+                    type="text"
+                    id={"jobInput"}
+                    placeholder={"job title, Keywords"}
                   />
                 </div>
                 <div className="col-lg-3 mt-lg-0 mt-2 border-end">
-                  <label htmlFor="locationInput" className="form-label">
-                    Location
-                  </label>
-                  <input
-                    ref={locationQuery}
-                    type="email"
-                    className="form-control"
-                    id="locationInput"
-                    aria-describedby="emailHelp"
-                    placeholder="City, province or region"
+                  <InputComponent
+                    label={"Location"}
+                    handleChange={setLocationQuery}
+                    type="text"
+                    id={"locationInput"}
+                    placeholder={"City, province or region"}
                   />
                 </div>
                 <div className="col-lg-3 mt-lg-0 mt-2">
-                  <label htmlFor="selectCategory" className="form-label">
-                    Category
-                  </label>
-                  <select
-                    ref={categoryQuery}
-                    className="form-select"
-                    aria-label="Default select example"
-                    id="selectCategory"
-                  >
-                    <option value="Select Industry" selected>
-                      Select Industry
-                    </option>
-                    <option value="1">Artificial Intelligence</option>
-                    <option value="2">Commerce</option>
-                    <option value="3">Education</option>
-                  </select>
+                  <CategorySelect />
                 </div>
                 <div className="col">
-                  <button
-                    onClick={(e) => handleSearch(e)}
-                    type="button"
-                    className={`btn ${CSS.searchButton} col-12 h-100 btn-dark`}
-                  >
-                    <BsSearch />
-                    <span className="ml-2">Search</span>
-                  </button>
+                  <SearchButton handleSearch={handleSearch} />
                 </div>
               </div>
             </div>
@@ -123,4 +90,4 @@ export function SearchForm({
       </div>
     </>
   );
-}
+};

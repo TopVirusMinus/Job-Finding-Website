@@ -17,8 +17,6 @@ const JobToggleFilter = ({
     filterBy === true ? filterBy : job.props.jobType === filterBy
   );
 
-  console.log(filteredJobs.length);
-
   const showJobsPart = filteredJobs.slice(0, showJobsCount);
 
   const handleShow = () => {

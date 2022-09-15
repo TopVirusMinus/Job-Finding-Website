@@ -19,15 +19,11 @@ function JobCard({
       className={`${CSS.cardContainer} container-fluid p-2 border-bottom d-flex align-items-center justify-content-center border-end `}
     >
       <div className="row d-flex justify-content-lg-center align-items-center">
-        <img
-          className={`me-3 ${CSS.companyLogo}`}
-          src={img}
-          alt="company-logo"
-        />
+        <img className={` ${CSS.companyLogo}`} src={img} alt="company-logo" />
         <div className="col-lg-3 col-sm-12 w-30 mb-3 ">
           <div className="">
             <div className={CSS.companyDetails}>
-              <h6 className={CSS.jobTitle}>{jobTitle}</h6>
+              <h6 className={`fw-bold ${CSS.jobTitle}`}>{jobTitle}</h6>
               <span className={CSS.companyName}>{companyName}</span>
               <span className={CSS.companySlogan}>{slogan}</span>
             </div>
@@ -47,7 +43,7 @@ function JobCard({
         </div>
         <div className="col-lg d-flex align-items-center justify-content-lg-evenly">
           <div
-            className={`${CSS.jobType} ${jobType} d-inline-block p-1 w-fit text-uppercase text-center text-white`}
+            className={`${CSS.jobType} ${jobType} fw-bold d-inline-block p-1 w-fit text-uppercase text-center text-white`}
           >
             {jobType}
           </div>

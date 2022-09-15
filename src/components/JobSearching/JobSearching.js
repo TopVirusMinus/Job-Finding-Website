@@ -1,8 +1,8 @@
-import CSS from "./JobSearching.module.css";
 import JobResults from "../JobResults/JobResults";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getJobs } from "../../store/jobSlice";
+import SidebarSearch from "../SidebarSearch/SidebarSearch";
 
 const JobSearching = () => {
   const dispatch = useDispatch();
@@ -16,11 +16,13 @@ const JobSearching = () => {
 
   return (
     <div className="container">
-      <div className="row mt-5">
+      <div className="row mt-5 gx-5">
         <div className="col-8">
           <JobResults />
         </div>
-        <div className="col-4"></div>
+        <div className="col-4 shadow-sm">
+          <SidebarSearch />
+        </div>
       </div>
     </div>
   );

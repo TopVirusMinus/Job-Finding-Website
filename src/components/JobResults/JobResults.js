@@ -93,15 +93,13 @@ const JobResults = () => {
           <div className={`${CSS.sortFilter}`}>
             <span className="mr-2">Sort by: </span>
             <select className="form-select w-25">
-              <option selected value="Newest">
-                Newest
-              </option>
+              <option value="Newest">Newest</option>
             </select>
           </div>
         </div>
       </div>
 
-      <ul className="nav nav-tabs" id="myTab" role="tablist">
+      <ul className="nav nav-tabs fw-bold" id="myTab" role="tablist">
         <li className="nav-item" role="presentation">
           <button
             className="nav-link active"

@@ -1,5 +1,4 @@
 import { SearchForm } from "../SearchForm/SearchForm";
-import CSS from "./Finder.module.css";
 import { useRef } from "react";
 import { setState } from "../../store/searchQuerySlice";
 import { useDispatch } from "react-redux";
@@ -9,13 +8,20 @@ const Finder = () => {
 
   const jobQuery = useRef("");
   const locationQuery = useRef("");
-  const categoryQuery = useRef("");
 
-  const handleSearch = (e) => {
+  const setJobQuery = (e) => {
+    jobQuery.current = e.target.value;
+  };
+
+  const setLocationQuery = (e) => {
+    locationQuery.current = e.target.value;
+  };
+
+  const handleSearch = () => {
     dispatch(
       setState({
-        job: jobQuery.current.value,
-        location: locationQuery.current.value,
+        job: jobQuery.current,
+        location: locationQuery.current,
       })
     );
   };
@@ -23,10 +29,9 @@ const Finder = () => {
   return (
     <>
       <SearchForm
-        jobQuery={jobQuery}
-        locationQuery={locationQuery}
-        categoryQuery={categoryQuery}
         handleSearch={handleSearch}
+        setJobQuery={setJobQuery}
+        setLocationQuery={setLocationQuery}
       />
     </>
   );
