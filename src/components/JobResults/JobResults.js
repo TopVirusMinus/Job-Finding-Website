@@ -82,7 +82,8 @@ const JobResults = () => {
       <div className="row justify-content-between">
         <div className="col-6">
           <span>
-            We have <span className={CSS.jobCount}>{jobState.jobs.length}</span>{" "}
+            We have{" "}
+            <span className={CSS.jobCount}>{jobsComponentArray.length}</span>{" "}
             jobs for you
           </span>
         </div>
