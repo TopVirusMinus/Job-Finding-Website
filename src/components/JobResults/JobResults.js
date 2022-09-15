@@ -14,7 +14,9 @@ const JobResults = ({
   numberOfJobsToShow,
   dispatch,
 }) => {
-  //MAKE IMAGES, JOBTYPE AFFECT THE API NOT ON LOAD
+  // SEPARATE DIFFERENT TABS TO DIFFERENT COMPONENETS
+  //  WITH DIFFERENT PROPS TO KNOW HOW MANY ITEMS IT HAS
+
   const searchQueryState = useSelector((state) => state.searchQuerySlice);
 
   let jobComponents =
