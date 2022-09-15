@@ -15,36 +15,44 @@ function JobCard({
   slogan,
 }) {
   return (
-    <div className={`${CSS.cardContainer} row p-2 border-bottom border-end `}>
-      <img className={CSS.companyLogo} src={img} alt="" />
-      <div className="col-3 w-30 mb-3 ">
-        <div className={CSS.companyInfo}>
-          <div className={CSS.companyDetails}>
-            <h6 className={CSS.jobTitle}>{jobTitle}</h6>
-            <span className={CSS.companyName}>{companyName}</span>
-            <span className={CSS.companySlogan}>{slogan}</span>
+    <div
+      className={`${CSS.cardContainer} container-fluid p-2 border-bottom d-flex align-items-center justify-content-center border-end `}
+    >
+      <div className="row d-flex justify-content-lg-center align-items-center">
+        <img
+          className={`me-3 ${CSS.companyLogo}`}
+          src={img}
+          alt="company-logo"
+        />
+        <div className="col-lg-3 col-sm-12 w-30 mb-3 ">
+          <div className="">
+            <div className={CSS.companyDetails}>
+              <h6 className={CSS.jobTitle}>{jobTitle}</h6>
+              <span className={CSS.companyName}>{companyName}</span>
+              <span className={CSS.companySlogan}>{slogan}</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="col-3 d-flex align-items-center">
-        <ImLocation
-          style={{
-            color: "gray",
-          }}
-        />
-        <span className="ms-1">{location}</span>
-      </div>
-      <div className="col-2  d-flex align-items-center">
-        <AiOutlineClockCircle />
-        <span className="ms-1">{time}</span>
-      </div>
-      <div className="col d-flex align-items-center justify-content-evenly">
-        <div
-          className={`${CSS.jobType} ${jobType} d-inline-block p-1 w-fit text-uppercase text-white`}
-        >
-          {jobType}
+        <div className="col-lg-3 col-sm-12 d-flex align-items-center">
+          <ImLocation
+            style={{
+              color: "gray",
+            }}
+          />
+          <span className="ms-1">{location}</span>
         </div>
-        <BsThreeDots />
+        <div className="col-lg-2  col-sm-12 d-flex align-items-center">
+          <AiOutlineClockCircle />
+          <span className="ms-1">{time}</span>
+        </div>
+        <div className="col-lg d-flex align-items-center justify-content-lg-evenly">
+          <div
+            className={`${CSS.jobType} ${jobType} d-inline-block p-1 w-fit text-uppercase text-center text-white`}
+          >
+            {jobType}
+          </div>
+          <BsThreeDots />
+        </div>
       </div>
     </div>
   );

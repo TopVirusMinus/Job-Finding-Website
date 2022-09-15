@@ -15,11 +15,13 @@ const JobSearching = () => {
   );
 
   return (
-    <div className="row mt-5">
-      <div className="col-8">
-        <JobResults />
+    <div className="container">
+      <div className="row mt-5">
+        <div className="col-8">
+          <JobResults />
+        </div>
+        <div className="col-4"></div>
       </div>
-      <div className="col-4"></div>
     </div>
   );
 };

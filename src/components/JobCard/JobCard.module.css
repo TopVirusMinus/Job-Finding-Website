@@ -11,14 +11,15 @@
   padding-left: 0.5rem;
   font-size: 0.9rem;
 }
-
-.companyLogo {
-  width: 75px;
-  height: 35px;
+@media only screen and (min-width: 991px) {
+  .companyLogo {
+    max-width: 10%;
+    width: auto;
+    height: auto;
+  }
 }
 
 .jobType {
-  text-align: center;
   width: 100px;
 }
 
@@ -26,17 +27,10 @@
   font-size: 1.2rem;
 }
 
-.companyInfo {
-  display: flex;
-  justify-content: space-between;
-}
-
 .companyDetails {
   width: 200px;
 }
 
 .cardContainer {
-  height: 140px;
-  display: flex;
-  align-items: center;
+  min-height: 140px;
 }
