@@ -58,6 +58,7 @@ const JobResults = () => {
                 location={j.location}
                 time={moment(j.createdAt).fromNow()}
                 jobType={j.jobType}
+                slogan={j.slogan}
               />
             );
           })
