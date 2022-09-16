@@ -50,6 +50,7 @@ export const getJobs = createAsyncThunk(
         r.slogan = slogans[Math.floor(Math.random() * jobTypes.length)];
         return true;
       });
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);

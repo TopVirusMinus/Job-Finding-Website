@@ -8,14 +8,14 @@ export function CardSection() {
   return (
     <div className="container mt-5 p-0">
       <div className="row">
-        <div className="col-6">
+        <div className="col-lg-6 col-sm-12">
           <div
             className="card"
             style={{
               backgroundColor: "#333",
               color: "white",
               borderRadius: 0,
-              minHeight: "260px",
+              height: "285px",
             }}
           >
             <div className="card-body p-0">
@@ -59,14 +59,14 @@ export function CardSection() {
           </div>
         </div>
 
-        <div className="col-6">
+        <div className="col-lg-6 col-md-6 col-sm-12 mt-lg-0 mt-sm-3">
           <div
             className="card mb-4"
             style={{
               backgroundColor: "#40c2f6",
               color: "white",
               borderRadius: 0,
-              minHeight: "260px",
+              height: "285px",
             }}
           >
             <div className="card-body p-0">

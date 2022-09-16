@@ -6,8 +6,19 @@ import JobSearching from "./components/JobSearching/JobSearching";
 import PositionCards from "./components/PositionCards";
 import JobResults from "./components/JobResults/JobResults";
 import SidebarSearch from "./components/SidebarSearch/SidebarSearch";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getJobs } from "./store/jobSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(
+    (_) => {
+      dispatch(getJobs());
+    },
+    [dispatch]
+  );
+
   return (
     <div className="App">
       <Map />
