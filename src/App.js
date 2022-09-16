@@ -1,3 +1,4 @@
+import { CardSection } from "./components/CardSection/CardSection";
 import "./App.css";
 import Map from "./components/Map/Map";
 import Finder from "./components/Finder/Finder";
@@ -12,6 +13,7 @@ function App() {
         <Finder />
         <JobSearching />
         <PositionCards />
+        <CardSection />
       </div>
     </div>
   );

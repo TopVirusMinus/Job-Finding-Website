@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getJobs } from "../../store/jobSlice";
 import SidebarSearch from "../SidebarSearch/SidebarSearch";
+import PositionCards from "../PositionCards";
 
 const JobSearching = () => {
   const dispatch = useDispatch();

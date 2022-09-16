@@ -1,0 +1,3 @@
+.emailInput::after {
+  content: "s";
+}
