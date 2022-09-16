@@ -71,8 +71,8 @@ const SidebarSearch = () => {
             title="Specialisms"
             body="UnderConstruction"
           />
-          <div className="h-25 mt-3">
-            <SearchButton handleSearch={handleSearch} />
+          <div className="row p-1 w-100 m-auto mt-3">
+            <SearchButton className="p-4" handleSearch={handleSearch} />
           </div>
         </div>
       </div>
