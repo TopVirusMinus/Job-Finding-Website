@@ -52,7 +52,7 @@ export function CardSection() {
                   className="btn btn-primary p-3 mt-3 w-100"
                   style={{ backgroundColor: "#4f53d2" }}
                 >
-                  Subscribe
+                  SUBSCRIBE
                 </button>
               </div>
             </div>

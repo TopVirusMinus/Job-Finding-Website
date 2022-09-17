@@ -141,7 +141,7 @@ const JobCarousel = () => {
                       className="btn w-100 btn-primary"
                       style={{ backgroundColor: "#4f53d2" }}
                     >
-                      Apply For This Job
+                      APPLY FOR THIS JOB
                     </button>
                   </div>
                 </>

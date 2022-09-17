@@ -6,14 +6,18 @@ import PositionCards from "./components/PositionCards";
 import JobResults from "./components/JobResults/JobResults";
 import SidebarSearch from "./components/SidebarSearch/SidebarSearch";
 import JobCarousel from "./components/JobCarousel/JobCarousel";
+import { getJobs } from "./store/jobSlice";
+import { getProfiles } from "./store/profileSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getJobs } from "./store/jobSlice";
+import CandidatesSection from "./components/CandidatesSection/CandidatesSection";
+
 function App() {
   const dispatch = useDispatch();
   useEffect(
     (_) => {
       dispatch(getJobs());
+      dispatch(getProfiles());
     },
     [dispatch]
   );
@@ -34,12 +38,7 @@ function App() {
             <JobCarousel />
           </div>
         </div>
-      </div>
-      <div
-        className="container-fluid text-center text-white"
-        style={{ backgroundColor: "#4f53d2", height: "300px" }}
-      >
-        <p>Find Top Talents</p>
+        <CandidatesSection />
       </div>
     </div>
   );
