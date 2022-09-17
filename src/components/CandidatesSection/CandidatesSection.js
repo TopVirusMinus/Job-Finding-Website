@@ -22,7 +22,7 @@ const CandidatesSection = () => {
     <>
       <div
         className={`${CSS.container} container-fluid mb-5 position-relative text-center text-white`}
-        style={{ backgroundColor: "#4f53d2", height: "450px" }}
+        style={{ backgroundColor: "#4f53d2", height: "320px" }}
       >
         <div className="container pt-5">
           <p>Find Top Talents</p>
