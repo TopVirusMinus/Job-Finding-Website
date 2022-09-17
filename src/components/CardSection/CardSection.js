@@ -27,12 +27,7 @@ export function CardSection() {
                   <FaPaperPlane />
                 </div>
                 <div className="title">
-                  <span
-                    className="card-title fs-5 ms-2 fw-bold p-2"
-                    style={{
-                      borderLeft: "1px solid white",
-                    }}
-                  >
+                  <span className="card-title fs-5 ms-2 fw-bold p-2">
                     Subscribe To Our News
                   </span>
                 </div>
@@ -48,12 +43,17 @@ export function CardSection() {
                     borderRadius: 0,
                   }}
                   type="email"
-                  className={`${CSS.emailInput} form-control mt-3 mb-3`}
+                  className={`${CSS.emailInput} form-control mt-4 mb-3`}
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                 />
-                <button className="btn btn-primary p-3 w-100">Subscribe</button>
+                <button
+                  className="btn btn-primary p-3 mt-3 w-100"
+                  style={{ backgroundColor: "#4f53d2" }}
+                >
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>
@@ -78,12 +78,7 @@ export function CardSection() {
                   <BsTwitter />
                 </div>
                 <div className="title">
-                  <span
-                    className="card-title fs-5 ms-2 fw-bold p-2"
-                    style={{
-                      borderLeft: "1px solid white",
-                    }}
-                  >
+                  <span className="card-title fs-5 ms-2 fw-bold p-2">
                     Latest Tweets
                   </span>
                 </div>

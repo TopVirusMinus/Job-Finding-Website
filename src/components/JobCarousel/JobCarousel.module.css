@@ -1,0 +1,22 @@
+[type="radio"] {
+  visibility: hidden;
+}
+
+.jobType {
+  width: 120px;
+  height: fit-content;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.companyName {
+  color: darkblue;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}

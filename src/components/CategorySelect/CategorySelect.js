@@ -11,9 +11,9 @@ export function CategorySelect({ className }) {
         id="selectCategory"
       >
         <option value="Select Industry">Select Industry</option>
-        <option value="1">Artificial Intelligence</option>
+        {/* <option value="1">Artificial Intelligence</option>
         <option value="2">Commerce</option>
-        <option value="3">Education</option>
+        <option value="3">Education</option> */}
       </select>
     </div>
   );

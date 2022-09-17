@@ -31,13 +31,13 @@ const SidebarSearch = () => {
 
   return (
     <>
-      <div className="row p-3 border">
-        <div className="container">
+      <div className="row p-3 border shadow-sm">
+        <div className="container ">
           <ImSearch />
           <span className="ms-5 fw-bold">Start Searching</span>
         </div>
       </div>
-      <div className="row">
+      <div className="row  shadow-sm">
         <div className="container border">
           <InputComponent
             handleChange={setJobQuery}
@@ -71,7 +71,7 @@ const SidebarSearch = () => {
             title="Specialisms"
             body="UnderConstruction"
           />
-          <div className="row p-1 w-100 m-auto mt-3">
+          <div className="row p-1 w-100 m-auto mt-3 mb-3">
             <SearchButton className="p-4" handleSearch={handleSearch} />
           </div>
         </div>

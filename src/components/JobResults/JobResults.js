@@ -2,7 +2,6 @@ import { LoadMoreListings } from "../LoadMoreListings/LoadMoreListings";
 import JobCard from "../JobCard/JobCard";
 import CSS from "./JobResults.module.css";
 import axios from "axios";
-import Spinner from "react-bootstrap/Spinner";
 import moment from "moment";
 import { increaseJobs, setCurrentJobs } from "../../store/jobSlice";
 import { setState } from "../../store/searchQuerySlice";

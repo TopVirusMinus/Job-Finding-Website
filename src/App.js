@@ -2,14 +2,13 @@ import { CardSection } from "./components/CardSection/CardSection";
 import "./App.css";
 import Map from "./components/Map/Map";
 import Finder from "./components/Finder/Finder";
-import JobSearching from "./components/JobSearching/JobSearching";
 import PositionCards from "./components/PositionCards";
 import JobResults from "./components/JobResults/JobResults";
 import SidebarSearch from "./components/SidebarSearch/SidebarSearch";
+import JobCarousel from "./components/JobCarousel/JobCarousel";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getJobs } from "./store/jobSlice";
-
 function App() {
   const dispatch = useDispatch();
   useEffect(
@@ -30,8 +29,9 @@ function App() {
             <PositionCards />
             <CardSection />
           </div>
-          <div className="col-4 shadow-sm">
+          <div className="col-4">
             <SidebarSearch />
+            <JobCarousel />
           </div>
         </div>
       </div>
