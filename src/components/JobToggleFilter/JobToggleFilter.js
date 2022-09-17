@@ -44,7 +44,10 @@ const JobToggleFilter = ({
           ></Spinner>
         </div>
       ) : (
-        <div className={`${CSS.jobCards} container-fluid-lg`}>
+        <div
+          style={{ minHeight: "560px" }}
+          className={`${CSS.jobCards} container-fluid-lg`}
+        >
           {filteredJobs.length ? (
             showJobsPart
           ) : (
