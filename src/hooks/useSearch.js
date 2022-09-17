@@ -6,7 +6,7 @@ const useSearch = () => {
   const dispatch = useDispatch();
 
   const handleSearch = (jobQuery, locationQuery) => {
-    console.log(jobQuery);
+    //console.log(jobQuery);
     dispatch(
       setState({
         job: jobQuery.current.value,

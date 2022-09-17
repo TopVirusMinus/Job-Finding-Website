@@ -52,22 +52,22 @@ const CandidatesSection = () => {
           {profileState.loading ? (
             <>
               <SwiperSlide>
-                <div class="spinner-border" role="status"></div>
+                <div className="spinner-border" role="status"></div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="spinner-border" role="status"></div>
+                <div className="spinner-border" role="status"></div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="spinner-border" role="status"></div>
+                <div className="spinner-border" role="status"></div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="spinner-border" role="status"></div>
+                <div className="spinner-border" role="status"></div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="spinner-border" role="status"></div>
+                <div className="spinner-border" role="status"></div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="spinner-border" role="status"></div>
+                <div className="spinner-border" role="status"></div>
               </SwiperSlide>
             </>
           ) : (
@@ -77,7 +77,7 @@ const CandidatesSection = () => {
       </div>
 
       <div className="container-fluid mb-3 d-flex justify-content-center">
-        <button class="btn btn-dark p-3 w-25">EXPLORE ALL</button>
+        <button className="btn btn-dark p-3 w-25">EXPLORE ALL</button>
       </div>
     </>
   );

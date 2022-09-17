@@ -16,7 +16,7 @@ const JobCarousel = () => {
   const firstJobs = jobState.jobs && jobState.jobs.slice(0, jobNum);
   const currentJob = firstJobs && firstJobs[jobCounter];
 
-  console.log(firstJobs);
+  //console.log(firstJobs);
 
   const leftButtonClick = () => {
     const remainder = (jobCounter - 1) % jobNum;
@@ -115,7 +115,7 @@ const JobCarousel = () => {
                       />{" "}
                       <label
                         className="btn btn-secondary"
-                        for="option1"
+                        htmlFor="option1"
                         onClick={() => leftButtonClick()}
                       >
                         &lt;
@@ -128,7 +128,7 @@ const JobCarousel = () => {
                       />
                       <label
                         className="btn btn-secondary"
-                        for="option2"
+                        htmlFor="option2"
                         onClick={() => rightButtonClick()}
                       >
                         &gt;
@@ -146,8 +146,8 @@ const JobCarousel = () => {
                   </div>
                 </>
               ) : (
-                <div class="spinner-border" role="status">
-                  <span class="sr-only"></span>
+                <div className="spinner-border" role="status">
+                  <span className="sr-only"></span>
                 </div>
               )}
             </div>

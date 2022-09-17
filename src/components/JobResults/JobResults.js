@@ -45,7 +45,7 @@ const JobResults = () => {
             return false;
           })
           .map((j) => {
-            console.log(j.jobtitle);
+            //console.log(j.jobtitle);
             //`https://picsum.photos/id/${j.id}/200/300`
             return (
               <JobCard

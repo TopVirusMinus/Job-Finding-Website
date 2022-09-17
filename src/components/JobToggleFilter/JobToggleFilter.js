@@ -31,7 +31,7 @@ const JobToggleFilter = ({
       aria-labelledby={ariaLabelledby}
     >
       {jobState.isError && (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           An error has occurred while fetching jobs!
         </div>
       )}
@@ -48,7 +48,7 @@ const JobToggleFilter = ({
           {filteredJobs.length ? (
             showJobsPart
           ) : (
-            <div class="alert alert-light" role="alert">
+            <div className="alert alert-light" role="alert">
               No jobs Found
             </div>
           )}

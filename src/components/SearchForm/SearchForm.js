@@ -82,7 +82,7 @@ export const SearchForm = ({ handleSearch, setJobQuery, setLocationQuery }) => {
             role="tabpanel"
             aria-labelledby="nav-profile-tab"
           >
-            <div class="alert alert-info" role="alert">
+            <div className="alert alert-info" role="alert">
               This section is still under development
             </div>
           </div>
