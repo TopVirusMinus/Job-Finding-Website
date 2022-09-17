@@ -1,0 +1,23 @@
+.swiperContainer {
+  bottom: 0;
+  margin-bottom: 2em;
+}
+
+.swiper {
+  min-height: 200px;
+  background-color: transparent;
+}
+
+.swiperSlide {
+  text-align: center;
+  background: #fff;
+  height: 300px;
+}
+
+.name {
+  font-size: 1.2rem;
+}
+
+.jobtitle {
+  font-size: 0.8rem;
+}
