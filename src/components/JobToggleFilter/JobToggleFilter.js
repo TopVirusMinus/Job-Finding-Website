@@ -36,11 +36,13 @@ const JobToggleFilter = ({
         </div>
       )}
       {jobState.isLoading ? (
-        <Spinner
-          animation="border"
-          className="mt-3 ms-3"
-          role="status"
-        ></Spinner>
+        <div style={{ height: "640px" }}>
+          <Spinner
+            animation="border"
+            className="mt-3 ms-3"
+            role="status"
+          ></Spinner>
+        </div>
       ) : (
         <div className={`${CSS.jobCards} container-fluid-lg`}>
           {filteredJobs.length ? (

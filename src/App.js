@@ -35,6 +35,12 @@ function App() {
           </div>
         </div>
       </div>
+      <div
+        className="container-fluid text-center text-white"
+        style={{ backgroundColor: "#4f53d2", height: "300px" }}
+      >
+        <p>Find Top Talents</p>
+      </div>
     </div>
   );
 }
